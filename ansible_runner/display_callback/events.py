@@ -153,6 +153,8 @@ class EventContext(object):
             event_dict['ad_hoc_command_id'] = int(os.getenv('AD_HOC_COMMAND_ID', '0'))
         if os.getenv('PROJECT_UPDATE_ID', ''):
             event_dict['project_update_id'] = int(os.getenv('PROJECT_UPDATE_ID', '0'))
+        if os.getenv('PROJECT_EXPORT_ID', ''):
+            event_dict['project_export_id'] = int(os.getenv('PROJECT_EXPORT_ID', '0'))
         event_dict['pid'] = event_data.get('pid', os.getpid())
         event_dict['uuid'] = event_data.get('uuid', str(uuid.uuid4()))
         event_dict['created'] = event_data.get('created', datetime.datetime.utcnow().isoformat())
